@@ -27,15 +27,15 @@ gulp.task('config', function() {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('generator', function() {
+gulp.task('tests', function() {
   var bundler = browserify({
-    entries: ['./web/generator.js'],
+    entries: ['./web/tests.js'],
     debug: !RELEASE
   });
 
   return bundler
     .bundle()
-    .pipe(source('generator.js'))
+    .pipe(source('tests.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(gulp_if(RELEASE, uglify()))
@@ -46,14 +46,14 @@ gulp.task('generator', function() {
 
 gulp.task('application', function() {
   var bundler = browserify({
-    entries: ['./web/js/main.js'],
+    entries: ['./web/app.js'],
     debug: !RELEASE
   });
   bundler.transform(reactify);
 
   return bundler
     .bundle()
-    .pipe(source('main.js'))
+    .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(gulp_if(RELEASE, uglify()))
@@ -77,8 +77,8 @@ gulp.task('serve', ['default'], function() {
   });
 
   gulp.watch('./web/config.js', ['config']);
-  gulp.watch('./web/generator.js', ['generator']);
-  gulp.watch(['./web/js/main.js', './web/js/**/*.js'], ['application']);
+  gulp.watch('./web/tests.js', ['tests']);
+  gulp.watch(['./web/app.js', './web/app/**/*.js', './web/app/**/*.jsx'], ['application']);
   gulp.watch('./web/**/*.html', ['html']);
 });
 
@@ -87,4 +87,4 @@ gulp.task('deploy', ['default'], function () {
     .pipe(deploy());
 });
 
-gulp.task('default', ['config', 'generator', 'application', 'html']);
+gulp.task('default', ['config', 'tests', 'application', 'html']);

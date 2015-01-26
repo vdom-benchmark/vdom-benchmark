@@ -16,7 +16,8 @@ g.addGroup([500], [
   [transformers.moveFromStartToEnd(1)],
   [transformers.removeLast(500)],
   [transformers.removeFirst(250)],
-  [transformers.removeLast(250)]
+  [transformers.removeLast(250)],
+  [transformers.skip]
 ]);
 
 g.addGroup([250], [
@@ -54,8 +55,6 @@ g.addGroup([5, 0], [
   [transformers.skip, transformers.insertLast(100)]
 ]);
 
-window.generateBenchmarkData = function(config) {
-  return {
-    units: g.generate()
-  };
+window.benchmarkTests = function(config) {
+  return g.generate();
 };

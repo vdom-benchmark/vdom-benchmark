@@ -24,6 +24,7 @@ function mean(items) {
 }
 
 function min(items) { return Math.min.apply(Math, items); }
+function max(items) { return Math.max.apply(Math, items); }
 
 function stdev(items) {
   var m = mean(items);
@@ -40,5 +41,6 @@ module.exports = {
   filterOutliers: filterOutliers,
   mean: mean,
   min: min,
+  max: max,
   stdev: stdev
 };

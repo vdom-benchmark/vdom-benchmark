@@ -4,31 +4,33 @@ var React = require('react');
 var d3 = require('d3');
 var stats = require('../stats');
 
-var ReportTable = React.createClass({
+var ResultsTable = React.createClass({
   render: function() {
-    var model = this.props.model;
-    var sampleNames = model.sampleNames;
-    var reports = model.reports;
+    var app = this.props.app;
+    var results = app.results;
+    var sampleNames = results.sampleNames;
+    var reports = results.reports;
 
     if (reports.length === 0) {
       return (
           <div className="panel panel-default">
-            <div className="panel-heading">Report</div>
+            <div className="panel-heading">Results</div>
             <div className="panel-body">Empty</div>
           </div>
       );
     }
 
+    // TODO: add clear button
     var titles = reports.map(function(r) {
       return (<th key={r.name + '__' + r.version}>{r.name} <small>{r.version}</small></th>);
     });
 
-    var results = [];
+    var rows = [];
 
     for (var i = 0; i < sampleNames.length; i++) {
       var sampleName = sampleNames[i];
 
-      var children = [(<td key="sampleName"><code>{sampleName}</code></td>)];
+      var cols = [(<td key="sampleName"><code>{sampleName}</code></td>)];
 
       var values = reports.map(function(r) {
         var samples = r.samples[sampleName];
@@ -61,14 +63,14 @@ var ReportTable = React.createClass({
         title += 'min: ' + Math.round(value.min * 1000).toString() + '\n';
         title += 'max: ' + Math.round(value.max * 1000).toString();
 
-        children.push((
+        cols.push((
             <td key={report.name + '__' + report.version} title={title} style={style}>
               {Math.round(value.median * 1000)}
             </td>
         ));
       }
 
-      results.push((<tr key={sampleName}>{children}</tr>));
+      rows.push((<tr key={sampleName}>{cols}</tr>));
     }
 
     return (
@@ -80,7 +82,7 @@ var ReportTable = React.createClass({
               <tr><th key="empty"></th>{titles}</tr>
             </thead>
             <tbody>
-              {results}
+              {rows}
             </tbody>
           </table>
         </div>
@@ -89,4 +91,4 @@ var ReportTable = React.createClass({
   }
 });
 
-module.exports = ReportTable;
+module.exports = ResultsTable;

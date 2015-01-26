@@ -3,25 +3,25 @@
 var React = require('react');
 var Header = require('./header.jsx');
 var ContestantsList = require('./contestants_list.jsx');
-var ReportTable = require('./report_table.jsx');
+var ResultsTable = require('./results_table.jsx');
 
-var Application = React.createClass({
+var Main = React.createClass({
   render: function() {
-    var model = this.props.model;
+    var app = this.props.app;
     var children;
 
-    if (model.state === 'ready') {
+    if (app.state === 'ready') {
       children = (
         <div>
-          <ContestantsList model={model} />
-          <ReportTable model={model} />
+          <ContestantsList app={app} />
+          <ResultsTable app={app} />
         </div>
       );
     }
 
     return (
       <div>
-        <Header model={this.props.model} />
+        <Header app={app} />
         <div className="container">
           {children}
         </div>
@@ -30,4 +30,4 @@ var Application = React.createClass({
   }
 });
 
-module.exports = Application;
+module.exports = Main;

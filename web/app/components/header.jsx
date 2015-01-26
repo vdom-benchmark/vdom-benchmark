@@ -4,14 +4,16 @@ var React = require('react');
 
 var Header = React.createClass({
   render: function() {
-    var model = this.props.model;
+    var app = this.props.app;
 
     var child;
-    if (model.state === 'initial') {
+    if (app.state === 'initial') {
       child = (<p>Config File is Missing</p>);
-    } else if (model.state === 'loading-config') {
+    } else if (app.state === 'loading-config') {
       child = (<p>Loading Config...</p>);
-    } else if (model.state === 'ready') {
+    } else if (app.state === 'loading-tests') {
+      child = (<p>Loading Tests...</p>);
+    } else if (app.state === 'ready') {
       child = (<p>Comparing performance of the diff/patch operations in various virtual dom libraries.</p>);
     }
 
