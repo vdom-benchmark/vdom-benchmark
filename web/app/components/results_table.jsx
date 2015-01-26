@@ -5,7 +5,15 @@ var d3 = require('d3');
 var stats = require('../stats');
 
 var ResultsTable = React.createClass({
+  getInitialState: function() {
+    return {
+      filter: ''
+    };
+  },
+
   render: function() {
+    var filter = this.state.filter;
+
     var app = this.props.app;
     var results = app.results;
     var sampleNames = results.sampleNames;
@@ -29,6 +37,9 @@ var ResultsTable = React.createClass({
 
     for (var i = 0; i < sampleNames.length; i++) {
       var sampleName = sampleNames[i];
+      if (sampleName.indexOf(filter) === -1) {
+        continue;
+      }
 
       var cols = [(<td key="sampleName"><code>{sampleName}</code></td>)];
 
@@ -75,8 +86,12 @@ var ResultsTable = React.createClass({
 
     return (
       <div className="panel panel-default">
-        <div className="panel-heading">Report</div>
+        <div className="panel-heading">Results</div>
         <div className="panel-body">
+          <div className="input-group">
+            <span className="input-group-addon">Filter</span>
+            <input type="text" className="form-control" placeholder="For ex.: update()" value={filter} onChange={this.handleFilterChange} />
+          </div>
           <table className="table table-condensed">
             <thead>
               <tr><th key="empty"></th>{titles}</tr>
@@ -88,6 +103,10 @@ var ResultsTable = React.createClass({
         </div>
       </div>
     );
+  },
+
+  handleFilterChange: function(e) {
+    this.setState({filter: e.target.value});
   }
 });
 
