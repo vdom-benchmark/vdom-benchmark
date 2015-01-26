@@ -10,4 +10,4 @@ dom libraries.
 - [Bobril](https://github.com/Bobris/Bobril)
 - [cito.js](https://github.com/joelrich/citojs)
 
-## [Run benchmark](http://localvoid.github.io/benchmark-aggregator/?cfg=http://localvoid.github.io/vdom-benchmark/config.js)
+## [Run benchmark](http://vdom-benchmark.github.io/vdom-benchmark/)
