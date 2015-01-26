@@ -1,10 +1,5 @@
 benchmarkConfig({
-  "name": "VDom Benchmark",
-  "description": "Comparing performance of the diff/patch operations in various virtual dom libraries.",
-  "data": {
-    "type": "script",
-    "url": "http://vdom-benchmark.github.io/vdom-benchmark/generator.js"
-  },
+  "tests": "http://vdom-benchmark.github.io/vdom-benchmark/tests.js",
   "contestants": [
     {
       "name": "kivi",
