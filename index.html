@@ -1,79 +1,19 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Virtual Dom benchmark</title>
+  <title>Virtual DOM Benchmark</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <style>
-
-  </style>
 </head>
 <body>
   <div class="jumbotron">
     <div class="container">
       <h1>Virtual DOM Benchmark</h1>
-      <p>Comparing performance of the diff/patch operations in different virtual dom libraries.</p>
-      <p><a href="https://github.com/localvoid/vdom-benchmark">Source code</a></p>
+      <p>Comparing performance of the diff/patch operations in various virtual dom libraries.</p>
+      <p>Virtual DOM Benchmark is moved to <a href="http://vdom-benchmark.github.io/benchmark-aggregator/?cfg=http://vdom-benchmark.github.io/vdom-benchmark/config.js">the new location</a>.</p>
     </div>
   </div>
-  <div class="container">
-    <div class="row" id="notification">
-      <p>System requirements: 2Gb memory (some libraries consume too much memory)</p>
-      <button class="btn btn-danger" id="startButton">Proceed</button>
-    </div>
-
-    <div id="benchmark" style="display: none">
-
-    <div class="row">
-      <div class="col-md-3">
-        <h2><a href="https://github.com/localvoid/vdom">VDom</a> <small>Dart</small></h2>
-        <button class="btn btn-default" id="runVDomDart">Run</button>
-      </div>
-      <div class="col-md-3">
-        <h2><a href="http://facebook.github.io/react/">React</a> <small>js</small></h2>
-        <button class="btn btn-default" id="runReactJs">Run</button>
-      </div>
-      <div class="col-md-3">
-        <h2><a href="http://lhorie.github.io/mithril/index.html">Mithril</a> <small>js</small></h2>
-        <button class="btn btn-default" id="runMithrilJs">Run</button>
-      </div>
-      <div class="col-md-3">
-        <h2><a href="https://github.com/Matt-Esch/virtual-dom">VirtualDom</a> <small>js</small></h2>
-        <button class="btn btn-default" id="runVirtualDomJs">Run</button>
-      </div>
-    </div>
-
-    <hr />
-
-    <div class="row">
-      <div id="data"></div>
-    </div>
-
-    <div class="row">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">Results:</div>
-        <div class="panel-body">
-          <p>Each test generates tag tree and performs different transformations.</p>
-          <p>For example, <code>[100, 50] [removeMiddle(1), skip]</code> generates 100 nodes, each node have 50 childrens. Transformation applied only to the top-level childrens, it removes one node in the middle.</p>
-          <p>Results are displayed in the format: initial rendering time / diff and patch time</p>
-        </div>
-
-        <table class="table table-striped" id="results">
-          <thead></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-
-    </div>
-  </div>
-
-  <script src="http://fb.me/react-0.11.2.min.js"></script>
-  <script src="js/main.js"></script>
-  <script async type="application/dart" src="index.dart"></script>
-  <script async src="packages/browser/dart.js"></script>
 </body>
 </html>
 
