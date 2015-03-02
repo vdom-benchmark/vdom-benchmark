@@ -21,6 +21,7 @@
     "benchmark"
   ],
   "dependencies": {
+    "URIjs": "^1.14.2",
     "d3": "^3.5.3",
     "react": "^0.12.2",
     "vdom-benchmark-generator": "^0.1.0"

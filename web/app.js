@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var URI = require('URIjs');
 var Results = require('./app/results');
 var Runner = require('./app/runner');
 var Main = require('./app/components/main.jsx');
@@ -68,13 +69,13 @@ Application.prototype.loadTests = function() {
 
 Application.prototype.openBenchmark = function(url) {
   var id = this._nextId++;
-  url = url + '?type=window&id=' + (id).toString();
+  url = URI(url).addQuery({'type': 'window', 'id': id}).toString();
   window.open(url, '_blank');
 };
 
 Application.prototype.runBenchmark = function(url, iterations) {
   var id = this._nextId++;
-  url = url + '?type=iframe&id=' + (id).toString();
+  url = URI(url).addQuery({'type': 'iframe', 'id': id}).toString();
   this.runner.run(id, url, iterations);
 };
 
