@@ -31099,7 +31099,7 @@ var ResultsTable = React.createClass({displayName: "ResultsTable",
     if (reports.length === 0) {
       return (
           React.createElement("div", {className: "panel panel-default"}, 
-            React.createElement("div", {className: "panel-heading"}, "Results"), 
+            React.createElement("div", {className: "panel-heading"}, "Results (lower is better)"), 
             React.createElement("div", {className: "panel-body"}, "Empty")
           )
       );
@@ -31141,7 +31141,7 @@ var ResultsTable = React.createClass({displayName: "ResultsTable",
         var report = reports[j];
         var value = values[j];
         var style = {
-          background: 'rgba(220, 100, 100, ' + (scale(value.median) * 0.5).toString() + ')'
+          background: 'rgba(46, 204, 64, ' + ((1 - scale(value.median)) * 0.5).toString() + ')'
         };
 
         var title = 'samples: ' + value.sampleCount.toString() + '\n';
@@ -31163,7 +31163,7 @@ var ResultsTable = React.createClass({displayName: "ResultsTable",
 
     return (
       React.createElement("div", {className: "panel panel-default"}, 
-        React.createElement("div", {className: "panel-heading"}, "Results"), 
+        React.createElement("div", {className: "panel-heading"}, "Results (lower is better)"), 
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("div", {className: "input-group"}, 
             React.createElement("span", {className: "input-group-addon"}, "Filter"), 
