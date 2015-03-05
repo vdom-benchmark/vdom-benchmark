@@ -22,7 +22,7 @@ var ResultsTable = React.createClass({
     if (reports.length === 0) {
       return (
           <div className="panel panel-default">
-            <div className="panel-heading">Results</div>
+            <div className="panel-heading">Results (lower is better)</div>
             <div className="panel-body">Empty</div>
           </div>
       );
@@ -64,7 +64,7 @@ var ResultsTable = React.createClass({
         var report = reports[j];
         var value = values[j];
         var style = {
-          background: 'rgba(220, 100, 100, ' + (scale(value.median) * 0.5).toString() + ')'
+          background: 'rgba(46, 204, 64, ' + ((1 - scale(value.median)) * 0.5).toString() + ')'
         };
 
         var title = 'samples: ' + value.sampleCount.toString() + '\n';
@@ -86,7 +86,7 @@ var ResultsTable = React.createClass({
 
     return (
       <div className="panel panel-default">
-        <div className="panel-heading">Results</div>
+        <div className="panel-heading">Results (lower is better)</div>
         <div className="panel-body">
           <div className="input-group">
             <span className="input-group-addon">Filter</span>
