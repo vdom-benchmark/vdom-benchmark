@@ -30,6 +30,11 @@ benchmarkConfig({
       "name": "mithril",
       "url": "http://lhorie.github.io/mithril/",
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-mithril/"
+    },
+    {
+      "name": "VDom",
+      "url": "http://github.com/localvoid/vdom",
+      "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-vdom/"
     }
   ]
 });
