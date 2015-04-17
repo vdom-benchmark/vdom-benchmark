@@ -9,5 +9,6 @@ dom libraries.
 - [VirtualDom](https://github.com/Matt-Esch/virtual-dom)
 - [Bobril](https://github.com/Bobris/Bobril)
 - [cito.js](https://github.com/joelrich/citojs)
+- [maquette](https://github.com/AFASSoftware/maquette)
 
 ## [Run benchmark](http://vdom-benchmark.github.io/vdom-benchmark/)
