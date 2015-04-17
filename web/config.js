@@ -32,9 +32,9 @@ benchmarkConfig({
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-mithril/"
     },
     {
-      "name": "VDom",
-      "url": "http://github.com/localvoid/vdom",
-      "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-vdom/"
+      "name": "maquette",
+      "url": "http://github.com/AFASSoftware/maquette/",
+      "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-maquette/"
     }
   ]
 });
