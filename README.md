@@ -10,5 +10,6 @@ dom libraries.
 - [Bobril](https://github.com/Bobris/Bobril)
 - [cito.js](https://github.com/joelrich/citojs)
 - [maquette](https://github.com/AFASSoftware/maquette)
+- [dom-layer](https://github.com/crysalead-js/dom-layer)
 
 ## [Run benchmark](http://vdom-benchmark.github.io/vdom-benchmark/)
