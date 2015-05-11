@@ -2,9 +2,9 @@ benchmarkConfig({
   "tests": "http://vdom-benchmark.github.io/vdom-benchmark/tests.js",
   "contestants": [
     {
-      "name": "kivi",
-      "url": "https://github.com/localvoid/kivi",
-      "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-kivi/"
+      "name": "uix",
+      "url": "https://github.com/localvoid/uix",
+      "benchmarkUrl": "http://localvoid.github.io/vdom-benchmark-uix/"
     },
     {
       "name": "cito.js",
