@@ -35,6 +35,11 @@ benchmarkConfig({
       "name": "maquette",
       "url": "http://github.com/AFASSoftware/maquette/",
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-maquette/"
+    },
+    {
+      "name": "dom-layer",
+      "url": "https://github.com/crysalead-js/dom-layer/",
+      "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-dom-layer/"
     }
   ]
 });
