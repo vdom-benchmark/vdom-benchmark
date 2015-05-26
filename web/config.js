@@ -40,6 +40,11 @@ benchmarkConfig({
       "name": "dom-layer",
       "url": "https://github.com/crysalead-js/dom-layer/",
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-dom-layer/"
+    },
+    {
+      "name": "Snabbdom",
+      "url": "https://github.com/paldepind/snabbdom/",
+      "benchmarkUrl": "http://paldepind.github.io/vdom-benchmark-snabbdom/"
     }
   ]
 });
