@@ -45,6 +45,11 @@ benchmarkConfig({
       "name": "Snabbdom",
       "url": "https://github.com/paldepind/snabbdom/",
       "benchmarkUrl": "http://paldepind.github.io/vdom-benchmark-snabbdom/"
+    },
+    {
+      "name": "Deku",
+      "url": "https://github.com/dekujs/deku/",
+      "benchmarkUrl": "http://dekujs.github.io/vdom-benchmark/"
     }
   ]
 });
