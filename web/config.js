@@ -1,5 +1,5 @@
 benchmarkConfig({
-  "tests": "http://vdom-benchmark.github.io/vdom-benchmark/tests.js",
+  "tests": "https://vdom-benchmark.github.io/vdom-benchmark/tests.js",
   "contestants": [
     {
       "name": "uix",
@@ -18,7 +18,7 @@ benchmarkConfig({
     },
     {
       "name": "React",
-      "url": "http://facebook.github.io/react/",
+      "url": "https://facebook.github.io/react/",
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-react/"
     },
     {
@@ -28,12 +28,12 @@ benchmarkConfig({
     },
     {
       "name": "mithril",
-      "url": "http://lhorie.github.io/mithril/",
+      "url": "https://lhorie.github.io/mithril/",
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-mithril/"
     },
     {
       "name": "maquette",
-      "url": "http://github.com/AFASSoftware/maquette/",
+      "url": "https://github.com/AFASSoftware/maquette/",
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-maquette/"
     },
     {
