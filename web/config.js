@@ -54,7 +54,7 @@ benchmarkConfig({
     {
       "name": "Trackira",
       "url": "https://github.com/trackira/trackira",
-      "benchmarkUrl": "https://github.com/deamme/vdom-benchmark-trackira"
+      "benchmarkUrl": "http://deamme.github.io/vdom-benchmark-trackira/"
     }
   ]
 });
