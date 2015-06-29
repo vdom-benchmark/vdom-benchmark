@@ -50,6 +50,11 @@ benchmarkConfig({
       "name": "Deku",
       "url": "https://github.com/dekujs/deku/",
       "benchmarkUrl": "http://dekujs.github.io/vdom-benchmark/"
+    },
+    {
+      "name": "Trackira",
+      "url": "https://github.com/trackira/trackira",
+      "benchmarkUrl": "https://github.com/deamme/vdom-benchmark-trackira"
     }
   ]
 });
