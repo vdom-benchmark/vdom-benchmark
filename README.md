@@ -12,5 +12,6 @@ dom libraries.
 - [maquette](https://github.com/AFASSoftware/maquette)
 - [dom-layer](https://github.com/crysalead-js/dom-layer)
 - [Snabbdom](https://github.com/paldepind/snabbdom)
+- [Trackira](https://github.com/trackira/trackira)
 
 ## [Run benchmark](http://vdom-benchmark.github.io/vdom-benchmark/)
