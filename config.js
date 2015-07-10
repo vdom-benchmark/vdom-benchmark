@@ -55,6 +55,11 @@ benchmarkConfig({
       "name": "Trackira",
       "url": "https://github.com/trackira/trackira",
       "benchmarkUrl": "https://deamme.github.io/vdom-benchmark-trackira/"
+    },
+    {
+      "name": "Incremental DOM",
+      "url": "https://github.com/google/incremental-dom",
+      "benchmarkUrl": "https://vdom-benchmark.github.io/vdom-benchmark-idom/"
     }
   ]
 });
