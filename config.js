@@ -64,7 +64,7 @@ benchmarkConfig({
     {
       "name": "InfernoJS",
       "url": "https://github.com/trueadm/inferno",
-      "benchmarkUrl": "https://vdom-benchmark.github.io/vdom-benchmark-inferno/"
+      "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-inferno/"
     }
   ]
 });
