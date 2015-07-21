@@ -60,6 +60,11 @@ benchmarkConfig({
       "name": "Incremental DOM",
       "url": "https://github.com/google/incremental-dom",
       "benchmarkUrl": "https://vdom-benchmark.github.io/vdom-benchmark-idom/"
+    },
+    {
+      "name": "InfernoJS",
+      "url": "https://github.com/trueadm/inferno",
+      "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-inferno/"
     }
   ]
 });
