@@ -35,6 +35,8 @@ var ResultsTable = React.createClass({
 
     var rows = [];
 
+    var overallTime = reports.map(function(r) { return 0; });
+
     for (var i = 0; i < sampleNames.length; i++) {
       var sampleName = sampleNames[i];
       if (sampleName.indexOf(filter) === -1) {
@@ -79,6 +81,8 @@ var ResultsTable = React.createClass({
               {Math.round(value.median * 1000)}
             </td>
         ));
+
+        overallTime[j] += Math.round(value.median * 1000);
       }
 
       rows.push((<tr key={sampleName}>{cols}</tr>));
@@ -97,6 +101,7 @@ var ResultsTable = React.createClass({
               <tr><th key="empty"></th>{titles}</tr>
             </thead>
             <tbody>
+              <tr><td key="empty">Overall Time</td>{overallTime.map(function(t) { return (<td>{t}</td>); })}</tr>
               {rows}
             </tbody>
           </table>
