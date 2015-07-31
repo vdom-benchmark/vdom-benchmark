@@ -31154,7 +31154,7 @@ var ContestantsList = React.createClass({displayName: "ContestantsList",
         React.createElement("div", {key: "custom_url", className: "list-group-item"}, 
           React.createElement("h4", {className: "list-group-item-heading"}, "Custom URL"), 
           React.createElement("div", {className: "input-group"}, 
-            React.createElement("input", {type: "text", className: "form-control", placeholder: "http://www.example.com", ref: "customUrl", value: this.state.customUrl}), 
+            React.createElement("input", {type: "text", className: "form-control", placeholder: "http://www.example.com", ref: "customUrl", value: this.state.customUrl, onChange: this.changeCustomUrl}), 
             React.createElement("span", {className: "input-group-btn"}, 
               React.createElement("button", {className: runButtonClassName, type: "button", onClick: this.runCustomUrl}, "Run"), 
               React.createElement("button", {className: "btn btn-default", type: "button", onClick: this.openCustomUrl}, "Open")
@@ -31165,12 +31165,17 @@ var ContestantsList = React.createClass({displayName: "ContestantsList",
     );
   },
 
-  runCustomUrl: function(e) {
-    e.preventDefault();
-    var url = this.refs.customUrl.getDOMNode().value;
+  changeCustomUrl: function(event) {
+    var url = event.target.value;
+    this.setState({customUrl: url});
     if (storage) {
       storage.setItem('customUrl', url);
     }
+  },
+
+  runCustomUrl: function(e) {
+    e.preventDefault();
+    var url = this.refs.customUrl.getDOMNode().value;
     this.props.app.runBenchmark(url, 10);
   },
 
