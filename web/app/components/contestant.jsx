@@ -10,7 +10,7 @@ var Contestant = React.createClass({
 
     return (
       <div className="list-group-item">
-        <h4 className="list-group-item-heading"><a href={data.url}>{data.name}</a></h4>
+        <h4 className="list-group-item-heading"><a href={data.url} target="_blank">{data.name}</a></h4>
         <div className="btn-group btn-group-xs">
           <button type="button" className={runButtonClassName} onClick={this.run}>Run</button>
           <button type="button" className="btn btn-default" onClick={this.open}>Open</button>
