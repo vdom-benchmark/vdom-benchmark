@@ -47,6 +47,28 @@ g.addGroup([5, 100], [
   [transformers.moveFromStartToEnd(1), transformers.skip]
 ]);
 
+g.addGroup([10, 10, 5], [
+  [transformers.reverse, transformers.skip, transformers.skip],
+  [transformers.shuffle, transformers.skip, transformers.skip],
+  [transformers.insertFirst(1), transformers.skip, transformers.skip],
+  [transformers.insertLast(1), transformers.skip, transformers.skip],
+  [transformers.removeFirst(1), transformers.skip, transformers.skip],
+  [transformers.removeLast(1), transformers.skip, transformers.skip],
+  [transformers.moveFromEndToStart(1), transformers.skip, transformers.skip],
+  [transformers.moveFromStartToEnd(1), transformers.skip, transformers.skip]
+]);
+
+g.addGroup([10, 1, 10, 5], [
+  [transformers.reverse, transformers.skip, transformers.skip, transformers.skip],
+  [transformers.shuffle, transformers.skip, transformers.skip, transformers.skip],
+  [transformers.insertFirst(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.insertLast(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.removeFirst(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.removeLast(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.moveFromEndToStart(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.moveFromStartToEnd(1), transformers.skip, transformers.skip, transformers.skip]
+]);
+
 g.addGroup([50, 0], [
   [transformers.skip, transformers.insertLast(10)]
 ]);
@@ -54,6 +76,7 @@ g.addGroup([50, 0], [
 g.addGroup([5, 0], [
   [transformers.skip, transformers.insertLast(100)]
 ]);
+
 
 window.benchmarkTests = function(config) {
   return g.generate();
