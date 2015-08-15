@@ -65,6 +65,11 @@ benchmarkConfig({
       "name": "InfernoJS",
       "url": "https://github.com/trueadm/inferno",
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-inferno/"
+    },
+    {
+      "name": "morphdom",
+      "url": "https://github.com/patrick-steele-idem/morphdom",
+      "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-morphdom/"
     }
   ]
 });
