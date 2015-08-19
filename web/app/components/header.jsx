@@ -22,6 +22,7 @@ var Header = React.createClass({
         <div className="container">
           <h1>Virtual DOM Benchmark</h1>
           {child}
+          <h3><a href="https://localvoid.github.io/uibench/" title="UI Benchmark">Benchmark for Component-based UI libraries.</a></h3>
         </div>
       </div>
     );
