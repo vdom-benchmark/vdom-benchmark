@@ -13,5 +13,6 @@ dom libraries.
 - [dom-layer](https://github.com/crysalead-js/dom-layer)
 - [Snabbdom](https://github.com/paldepind/snabbdom)
 - [Trackira](https://github.com/trackira/trackira)
+- [Vidom](https://github.com/dfilatov/vidom)
 
 ## [Run benchmark](http://vdom-benchmark.github.io/vdom-benchmark/)
