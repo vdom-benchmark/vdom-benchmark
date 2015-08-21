@@ -70,6 +70,11 @@ benchmarkConfig({
       "name": "morphdom",
       "url": "https://github.com/patrick-steele-idem/morphdom",
       "benchmarkUrl": "http://vdom-benchmark.github.io/vdom-benchmark-morphdom/"
+    },
+    {
+      "name": "Vidom",
+      "url": "https://github.com/dfilatov/vidom/",
+      "benchmarkUrl": "https://dfilatov.github.io/vdom-benchmark-vidom/"
     }
   ]
 });
