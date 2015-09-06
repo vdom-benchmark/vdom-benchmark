@@ -75,6 +75,11 @@ benchmarkConfig({
       "name": "Vidom",
       "url": "https://github.com/dfilatov/vidom/",
       "benchmarkUrl": "https://dfilatov.github.io/vdom-benchmark-vidom/"
+    },
+    {
+      "name": "kivi",
+      "url": "https://github.com/localvoid.github.io/kivi",
+      "benchmarkUrl": "https://vdom-benchmark.github.io/vdom-benchmark-kivi/"
     }
   ]
 });
