@@ -24,7 +24,7 @@ var Main = React.createClass({
         <Header app={app} />
         <div className="container">
           <div className="alert alert-warning" role="alert">
-            <a className="alert-link" href="https://localvoid.github.io/uibench/" title="UI Benchmark">New benchmark for Component-based UI libraries.</a>
+            <a className="alert-link" href="https://localvoid.github.io/uibench/" title="UI Benchmark">>> New benchmark for Component-based UI libraries.</a>
           </div>
         </div>
         <div className="container">
