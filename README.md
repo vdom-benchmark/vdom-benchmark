@@ -3,7 +3,6 @@
 Comparing performance of the diff/patch operations in various virtual
 dom libraries.
 
-- [kivi](https://github.com/localvoid/kivi)
 - [React](http://facebook.github.io/react/)
 - [Mithril](http://lhorie.github.io/mithril/index.html)
 - [VirtualDom](https://github.com/Matt-Esch/virtual-dom)
@@ -14,5 +13,7 @@ dom libraries.
 - [Snabbdom](https://github.com/paldepind/snabbdom)
 - [Trackira](https://github.com/trackira/trackira)
 - [Vidom](https://github.com/dfilatov/vidom)
+- [kivi](https://github.com/localvoid/kivi)
+- [virtex](https://github.com/ashaffer/virtex)
 
 ## [Run benchmark](http://vdom-benchmark.github.io/vdom-benchmark/)

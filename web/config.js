@@ -78,8 +78,13 @@ benchmarkConfig({
     },
     {
       "name": "kivi",
-      "url": "https://github.com/localvoid.github.io/kivi",
+      "url": "https://github.com/localvoid/kivi",
       "benchmarkUrl": "https://vdom-benchmark.github.io/vdom-benchmark-kivi/"
+    },
+    {
+      "name": "virtex",
+      "url": "https://github.com/ashaffer/virtex",
+      "benchmarkUrl": "https://ashaffer.github.io/vdom-benchmark-virtex/"
     }
   ]
 });
