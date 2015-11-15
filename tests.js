@@ -1,2 +1,306 @@
-!function r(e,t,s){function n(i,a){if(!t[i]){if(!e[i]){var p="function"==typeof require&&require;if(!a&&p)return p(i,!0);if(o)return o(i,!0);var f=new Error("Cannot find module '"+i+"'");throw f.code="MODULE_NOT_FOUND",f}var u=t[i]={exports:{}};e[i][0].call(u.exports,function(r){var t=e[i][1][r];return n(t?t:r)},u,u.exports,r,e,t,s)}return t[i].exports}for(var o="function"==typeof require&&require,i=0;i<s.length;i++)n(s[i]);return n}({1:[function(r){"use strict";var e=r("vdom-benchmark-generator"),t=e.transformers,s=e.Generator,n=new s;n.addGroup([500],[[t.reverse],[t.shuffle],[t.insertFirst(1)],[t.insertLast(1)],[t.removeFirst(1)],[t.removeLast(1)],[t.moveFromEndToStart(1)],[t.moveFromStartToEnd(1)],[t.removeLast(500)],[t.removeFirst(250)],[t.removeLast(250)],[t.skip]]),n.addGroup([250],[[t.insertFirst(250)],[t.insertLast(250)]]),n.addGroup([50,10],[[t.reverse,t.skip],[t.shuffle,t.skip],[t.insertFirst(1),t.skip],[t.insertLast(1),t.skip],[t.removeFirst(1),t.skip],[t.removeLast(1),t.skip],[t.moveFromEndToStart(1),t.skip],[t.moveFromStartToEnd(1),t.skip]]),n.addGroup([5,100],[[t.reverse,t.skip],[t.shuffle,t.skip],[t.insertFirst(1),t.skip],[t.insertLast(1),t.skip],[t.removeFirst(1),t.skip],[t.removeLast(1),t.skip],[t.moveFromEndToStart(1),t.skip],[t.moveFromStartToEnd(1),t.skip]]),n.addGroup([10,10,5],[[t.reverse,t.skip,t.skip],[t.shuffle,t.skip,t.skip],[t.insertFirst(1),t.skip,t.skip],[t.insertLast(1),t.skip,t.skip],[t.removeFirst(1),t.skip,t.skip],[t.removeLast(1),t.skip,t.skip],[t.moveFromEndToStart(1),t.skip,t.skip],[t.moveFromStartToEnd(1),t.skip,t.skip]]),n.addGroup([10,1,10,5],[[t.reverse,t.skip,t.skip,t.skip],[t.shuffle,t.skip,t.skip,t.skip],[t.insertFirst(1),t.skip,t.skip,t.skip],[t.insertLast(1),t.skip,t.skip,t.skip],[t.removeFirst(1),t.skip,t.skip,t.skip],[t.removeLast(1),t.skip,t.skip,t.skip],[t.moveFromEndToStart(1),t.skip,t.skip,t.skip],[t.moveFromStartToEnd(1),t.skip,t.skip,t.skip]]),n.addGroup([50,0],[[t.skip,t.insertLast(10)]]),n.addGroup([5,0],[[t.skip,t.insertLast(100)]]),window.benchmarkTests=function(){return n.generate()}},{"vdom-benchmark-generator":2}],2:[function(r,e){"use strict";var t=r("./lib/generator");e.exports={Generator:t.Generator,createNode:t.createNode,NodeFlags:r("./lib/node_flags"),transformers:r("./lib/transformers")}},{"./lib/generator":3,"./lib/node_flags":4,"./lib/transformers":5}],3:[function(r,e){"use strict";function t(r,e,t){return void 0===e&&(e=0),void 0===t&&(t=null),{key:r,flags:0,children:t}}function s(r,e,n){void 0===e&&(e=null),void 0===n&&(n=0);var o,i=[],a=r[n];if(n===r.length-1)for(o=0;a>o;o++)i.push(t(o,0,null));else for(o=0;a>o;o++)i.push(t(o,0,s(r,e,n+1)));return null!=e&&e[n].fn(i),i}function n(){this.groups=[]}n.prototype.addGroup=function(r,e){this.groups.push({nodes:r,transformers:e})},n.prototype.generate=function(){var r,e,t,n,o,i,a,p=[];for(r=0;r<this.groups.length;r++)for(t=this.groups[r],o=s(t.nodes),a=JSON.stringify(t.nodes)+" ",e=0;e<t.transformers.length;e++)n=t.transformers[e],i=s(t.nodes,n),p.push({name:a+JSON.stringify(n.map(function(r){return r.name})),data:{a:o,b:i}});return p},e.exports={Generator:n,createNode:t}},{}],4:[function(r,e){"use strict";e.exports={component:1,style:2,attribute:4,classes:8}},{}],5:[function(r,e){"use strict";function t(r){return{name:"insertFirst("+r.toString()+")",fn:function(e){for(var t=0;r>t;t++)e.unshift(p(e.length))}}}function s(r){return{name:"insertLast("+r.toString()+")",fn:function(e){for(var t=0;r>t;t++)e.push(p(e.length))}}}function n(r){return{name:"removeFirst("+r.toString()+")",fn:function(e){for(var t=0;r>t;t++)e.shift()}}}function o(r){return{name:"removeLast("+r.toString()+")",fn:function(e){for(var t=0;r>t;t++)e.pop()}}}function i(r){return{name:"moveFromEndToStart("+r.toString()+")",fn:function(e){for(var t=0;r>t;t++)e.unshift(e.pop())}}}function a(r){return{name:"moveFromStartToEnd("+r.toString()+")",fn:function(e){for(var t=0;r>t;t++)e.push(e.shift())}}}var p=r("./generator").createNode,f={name:"skip",fn:function(){}},u={name:"reverse",fn:function(r){r.reverse()}},m={name:"shuffle",fn:function(r){for(var e,t,s=r.length;0!==s;)e=Math.floor(Math.random()*s--),t=r[s],r[s]=r[e],r[e]=t}};e.exports={skip:f,reverse:u,shuffle:m,insertFirst:t,insertLast:s,removeFirst:n,removeLast:o,moveFromEndToStart:i,moveFromStartToEnd:a}},{"./generator":3}]},{},[1]);
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+var generator = require('vdom-benchmark-generator');
+var transformers = generator.transformers;
+var Generator = generator.Generator;
+
+var g = new Generator();
+g.addGroup([500], [
+  [transformers.reverse],
+  [transformers.shuffle],
+  [transformers.insertFirst(1)],
+  [transformers.insertLast(1)],
+  [transformers.removeFirst(1)],
+  [transformers.removeLast(1)],
+  [transformers.moveFromEndToStart(1)],
+  [transformers.moveFromStartToEnd(1)],
+  [transformers.removeLast(500)],
+  [transformers.removeFirst(250)],
+  [transformers.removeLast(250)],
+  [transformers.skip]
+]);
+
+g.addGroup([250], [
+  [transformers.insertFirst(250)],
+  [transformers.insertLast(250)]
+]);
+
+g.addGroup([50, 10], [
+  [transformers.reverse, transformers.skip],
+  [transformers.shuffle, transformers.skip],
+  [transformers.insertFirst(1), transformers.skip],
+  [transformers.insertLast(1), transformers.skip],
+  [transformers.removeFirst(1), transformers.skip],
+  [transformers.removeLast(1), transformers.skip],
+  [transformers.moveFromEndToStart(1), transformers.skip],
+  [transformers.moveFromStartToEnd(1), transformers.skip]
+]);
+
+g.addGroup([5, 100], [
+  [transformers.reverse, transformers.skip],
+  [transformers.shuffle, transformers.skip],
+  [transformers.insertFirst(1), transformers.skip],
+  [transformers.insertLast(1), transformers.skip],
+  [transformers.removeFirst(1), transformers.skip],
+  [transformers.removeLast(1), transformers.skip],
+  [transformers.moveFromEndToStart(1), transformers.skip],
+  [transformers.moveFromStartToEnd(1), transformers.skip]
+]);
+
+g.addGroup([10, 10, 5], [
+  [transformers.reverse, transformers.skip, transformers.skip],
+  [transformers.shuffle, transformers.skip, transformers.skip],
+  [transformers.insertFirst(1), transformers.skip, transformers.skip],
+  [transformers.insertLast(1), transformers.skip, transformers.skip],
+  [transformers.removeFirst(1), transformers.skip, transformers.skip],
+  [transformers.removeLast(1), transformers.skip, transformers.skip],
+  [transformers.moveFromEndToStart(1), transformers.skip, transformers.skip],
+  [transformers.moveFromStartToEnd(1), transformers.skip, transformers.skip]
+]);
+
+g.addGroup([10, 1, 10, 5], [
+  [transformers.reverse, transformers.skip, transformers.skip, transformers.skip],
+  [transformers.shuffle, transformers.skip, transformers.skip, transformers.skip],
+  [transformers.insertFirst(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.insertLast(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.removeFirst(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.removeLast(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.moveFromEndToStart(1), transformers.skip, transformers.skip, transformers.skip],
+  [transformers.moveFromStartToEnd(1), transformers.skip, transformers.skip, transformers.skip]
+]);
+
+g.addGroup([50, 0], [
+  [transformers.skip, transformers.insertLast(10)]
+]);
+
+g.addGroup([5, 0], [
+  [transformers.skip, transformers.insertLast(100)]
+]);
+
+
+window.benchmarkTests = function(config) {
+  return g.generate();
+};
+
+},{"vdom-benchmark-generator":2}],2:[function(require,module,exports){
+'use strict';
+
+var generator = require('./lib/generator');
+
+module.exports = {
+  Generator: generator.Generator,
+  createNode: generator.createNode,
+  NodeFlags: require('./lib/node_flags'),
+  transformers: require('./lib/transformers')
+};
+
+},{"./lib/generator":3,"./lib/node_flags":4,"./lib/transformers":5}],3:[function(require,module,exports){
+'use strict';
+
+function createNode(key, flags, children) {
+  if (flags === void 0) flags = 0;
+  if (children === void 0) children = null;
+
+  return {
+    key: key,
+    flags: 0,
+    children: children
+  };
+}
+
+function generateNodes(nodes, transformers, depth) {
+  if (transformers === void 0) transformers = null;
+  if (depth === void 0) depth = 0;
+
+  var i;
+  var result = [];
+  var count = nodes[depth];
+
+  if (depth === (nodes.length - 1)) { // max depth
+    for (i = 0; i < count; i++) {
+      result.push(createNode(i, 0, null));
+    }
+  } else {
+    for (i = 0; i < count; i++) {
+      result.push(createNode(i, 0, generateNodes(nodes, transformers, depth + 1)));
+    }
+  }
+
+  if (transformers != null) {
+    transformers[depth].fn(result);
+  }
+
+  return result;
+}
+
+function Generator() {
+  this.groups = [];
+}
+
+Generator.prototype.addGroup = function(nodes, transformers) {
+  this.groups.push({
+    nodes: nodes,
+    transformers: transformers
+  });
+};
+
+Generator.prototype.generate = function() {
+  var i, j;
+  var group;
+  var transformers;
+  var a, b;
+  var namePrefix;
+  var units = [];
+
+  for (i = 0; i < this.groups.length; i++) {
+    group = this.groups[i];
+    a = generateNodes(group.nodes);
+    namePrefix = JSON.stringify(group.nodes) + ' ';
+
+    for (j = 0; j < group.transformers.length; j++) {
+      transformers = group.transformers[j];
+      b = generateNodes(group.nodes, transformers);
+
+      units.push({
+        name: namePrefix + JSON.stringify(transformers.map(function(t) { return t.name; })),
+        data: {
+          a: a,
+          b: b
+        }
+      });
+    }
+  }
+
+  return units;
+};
+
+module.exports = {
+  Generator: Generator,
+  createNode: createNode
+};
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+  component: 1,
+  style: 1 << 1,
+  attribute: 1 << 2,
+  classes: 1 << 3
+};
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+var createNode = require('./generator').createNode;
+
+var skip = {
+  name: 'skip',
+  fn: function(c) {}
+};
+
+var reverse = {
+  name: 'reverse',
+  fn: function(c) { c.reverse(); }
+};
+
+var shuffle = {
+  name: 'shuffle',
+  fn: function(c) {
+    var i = c.length;
+    var r;
+    var tmp;
+
+    while (i !== 0) {
+      r = Math.floor(Math.random() * (i--));
+
+      tmp = c[i];
+      c[i] = c[r];
+      c[r] = tmp;
+    }
+  }
+};
+
+function insertFirst(n) {
+  return {
+    name: 'insertFirst(' + n.toString() + ')',
+    fn: function (c) {
+      for (var i = 0; i < n; i++) {
+        c.unshift(createNode(c.length));
+      }
+    }
+  };
+};
+
+function insertLast(n) {
+  return {
+    name: 'insertLast(' + n.toString() + ')',
+    fn: function (c) {
+      for (var i = 0; i < n; i++) {
+        c.push(createNode(c.length));
+      }
+    }
+  };
+};
+
+function removeFirst(n) {
+  return {
+    name: 'removeFirst(' + n.toString() + ')',
+    fn: function (c) {
+      for (var i = 0; i < n; i++) {
+        c.shift();
+      }
+    }
+  };
+}
+
+function removeLast(n) {
+  return {
+    name: 'removeLast(' + n.toString() + ')',
+    fn: function (c) {
+      for (var i = 0; i < n; i++) {
+        c.pop();
+      }
+    }
+  };
+}
+
+function moveFromEndToStart(n) {
+  return {
+    name: 'moveFromEndToStart(' + n.toString() + ')',
+    fn: function (c) {
+      for (var i = 0; i < n; i++) {
+        c.unshift(c.pop());
+      }
+    }
+  };
+}
+
+function moveFromStartToEnd(n) {
+  return {
+    name: 'moveFromStartToEnd(' + n.toString() + ')',
+    fn: function (c) {
+      for (var i = 0; i < n; i++) {
+        c.push(c.shift());
+      }
+    }
+  };
+}
+
+module.exports = {
+  skip: skip,
+  reverse: reverse,
+  shuffle: shuffle,
+  insertFirst: insertFirst,
+  insertLast: insertLast,
+  removeFirst: removeFirst,
+  removeLast: removeLast,
+  moveFromEndToStart: moveFromEndToStart,
+  moveFromStartToEnd: moveFromStartToEnd
+};
+
+},{"./generator":3}]},{},[1])
+
+
 //# sourceMappingURL=tests.js.map
