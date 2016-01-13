@@ -20,8 +20,6 @@ var ContestantsList = React.createClass({
       return (<Contestant key={c.name + '__' + c.version} app={app} data={c} />);
     });
 
-    var runButtonClassName = 'btn btn-default' + (app.runner.running ? ' disabled' : '');
-
     return (
       <div className="list-group">
         {children}
@@ -30,7 +28,6 @@ var ContestantsList = React.createClass({
           <div className="input-group">
             <input type="text" className="form-control" placeholder="http://www.example.com" ref="customUrl" value={this.state.customUrl} onChange={this.changeCustomUrl} />
             <span className="input-group-btn">
-              <button className={runButtonClassName} type="button" onClick={this.runCustomUrl}>Run</button>
               <button className="btn btn-default" type="button" onClick={this.openCustomUrl}>Open</button>
             </span>
           </div>
@@ -45,12 +42,6 @@ var ContestantsList = React.createClass({
     if (storage) {
       storage.setItem('customUrl', url);
     }
-  },
-
-  runCustomUrl: function(e) {
-    e.preventDefault();
-    var url = this.refs.customUrl.getDOMNode().value;
-    this.props.app.runBenchmark(url, 10);
   },
 
   openCustomUrl: function(e) {
