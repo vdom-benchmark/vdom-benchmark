@@ -22,6 +22,11 @@ benchmarkConfig({
       "benchmarkUrl": "https://vdom-benchmark.github.io/vdom-benchmark-react/"
     },
     {
+      "name": "React-lite",
+      "url": "https://github.com/Lucifier129/react-lite",
+      "benchmarkUrl": "http://lucifier129.github.io/vdom-benchmark-react-lite/"
+    },
+    {
       "name": "virtual-dom",
       "url": "https://github.com/Matt-Esch/virtual-dom",
       "benchmarkUrl": "https://vdom-benchmark.github.io/vdom-benchmark-virtual-dom/"
