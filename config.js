@@ -90,6 +90,11 @@ benchmarkConfig({
       "name": "virtex",
       "url": "https://github.com/ashaffer/virtex",
       "benchmarkUrl": "https://ashaffer.github.io/vdom-benchmark-virtex/"
+    },
+    {
+      "name": "set-dom",
+      "url": "https://github.com/DylanPiercey/set-dom",
+      "benchmarkUrl": "https://dylanpiercey.github.io/vdom-set-dom/"
     }
   ]
 });
