@@ -8,27 +8,15 @@ var ResultsTable = require('./results_table.jsx');
 var Main = React.createClass({
   render: function() {
     var app = this.props.app;
-    var children;
-
-    if (app.state === 'ready') {
-      children = (
-        <div>
-          <ContestantsList app={app} />
-          <ResultsTable app={app} />
-        </div>
-      );
-    }
 
     return (
       <div>
-        <Header app={app} />
+        <Header />
         <div className="container">
-          <div className="alert alert-warning" role="alert">
-            <a className="alert-link" href="https://localvoid.github.io/uibench/" title="UI Benchmark">&raquo; New benchmark for Component-based UI libraries.</a>
+          <div>
+            <ContestantsList app={app} />
+            <ResultsTable app={app} />
           </div>
-        </div>
-        <div className="container">
-          {children}
         </div>
       </div>
     );

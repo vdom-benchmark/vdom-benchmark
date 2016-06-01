@@ -21,29 +21,6 @@ var DEST = './build';
 
 gulp.task('clean', del.bind(null, [DEST]));
 
-gulp.task('config', function() {
-  gulp.src('./web/config.js')
-    .pipe(gulp.dest(DEST))
-    .pipe(reload({stream: true}));
-});
-
-gulp.task('tests', function() {
-  var bundler = browserify({
-    entries: ['./web/tests.js'],
-    debug: !RELEASE
-  });
-
-  return bundler
-    .bundle()
-    .pipe(source('tests.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(gulp_if(RELEASE, uglify()))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(DEST))
-    .pipe(reload({stream: true}));
-});
-
 gulp.task('application', function() {
   var bundler = browserify({
     entries: ['./web/app.js'],
@@ -76,8 +53,6 @@ gulp.task('serve', ['default'], function() {
     server: 'build'
   });
 
-  gulp.watch('./web/config.js', ['config']);
-  gulp.watch('./web/tests.js', ['tests']);
   gulp.watch(['./web/app.js', './web/app/**/*.js', './web/app/**/*.jsx'], ['application']);
   gulp.watch('./web/**/*.html', ['html']);
 });
@@ -87,4 +62,4 @@ gulp.task('deploy', ['default'], function () {
     .pipe(deploy());
 });
 
-gulp.task('default', ['config', 'tests', 'application', 'html']);
+gulp.task('default', ['application', 'html']);
