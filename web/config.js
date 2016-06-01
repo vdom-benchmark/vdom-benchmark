@@ -2,11 +2,6 @@ benchmarkConfig({
   "tests": "http://vdom-benchmark.github.io/vdom-benchmark/tests.js",
   "contestants": [
     {
-      "name": "uix",
-      "url": "https://github.com/localvoid/uix",
-      "benchmarkUrl": "https://localvoid.github.io/vdom-benchmark-uix/"
-    },
-    {
       "name": "cito.js",
       "url": "https://github.com/joelrich/citojs",
       "benchmarkUrl": "https://vdom-benchmark.github.io/vdom-benchmark-cito/"
@@ -55,11 +50,6 @@ benchmarkConfig({
       "name": "Deku",
       "url": "https://github.com/dekujs/deku/",
       "benchmarkUrl": "https://dekujs.github.io/vdom-benchmark/"
-    },
-    {
-      "name": "Trackira",
-      "url": "https://github.com/trackira/trackira",
-      "benchmarkUrl": "https://deamme.github.io/vdom-benchmark-trackira/"
     },
     {
       "name": "Incremental DOM",
